@@ -1,0 +1,92 @@
+/* ─── Outer wrapper — centers the grid and lets wallpaper breathe ── */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Compact floating grid ─────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 220px 380px 230px;
+  grid-template-rows: 148px auto 1fr;
+  gap: var(--gap);
+  /* Fixed size — does NOT fill the viewport */
+  width:  860px;
+  height: 520px;
+}
+
+/* ─── Card base ──────────────────────────────────────────────────── */
+.card {
+  background:      var(--glass-bg);
+  border:          1px solid var(--glass-border);
+  border-radius:   var(--radius-lg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:      var(--glass-shadow);
+  padding:         var(--pad);
+  display:         flex;
+  flex-direction:  column;
+  transition:      background 0.25s, box-shadow 0.25s, transform 0.2s;
+  overflow:        hidden;
+}
+
+.card:hover {
+  background:  var(--glass-bg-hover);
+  box-shadow:  0 12px 40px rgba(0, 0, 0, 0.65),
+               0  3px 10px rgba(0, 0, 0, 0.4),
+               inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+/* ─── Cell assignments ───────────────────────────────────────────── */
+.mod-clock  { grid-column: 1; grid-row: 1; }
+.mod-search { grid-column: 1; grid-row: 2; }
+.mod-stats  { grid-column: 1; grid-row: 3; }
+
+.mod-links  { grid-column: 2; grid-row: 1 / 4; }
+
+.mod-tasks  { grid-column: 3; grid-row: 1; }
+.mod-notes  { grid-column: 3; grid-row: 2; }
+.mod-media  { grid-column: 3; grid-row: 3; }
+
+/* ─── Shared module header ───────────────────────────────────────── */
+.module-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  margin-bottom:   10px;
+  flex-shrink:     0;
+}
+
+.module-title {
+  font-size:      10px;
+  font-weight:    700;
+  color:          var(--text-secondary);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* ─── Small icon button ─────────────────────────────────────────── */
+.icon-btn {
+  width:  22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--text-primary);
+}
+
+.icon-btn svg {
+  width: 10px;
+  height: 10px;
+}

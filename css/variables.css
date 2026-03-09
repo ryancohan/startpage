@@ -1,0 +1,29 @@
+:root {
+  /* Floating frosted cards */
+  --glass-bg:        rgba(12, 12, 16, 0.72);
+  --glass-bg-hover:  rgba(18, 18, 24, 0.80);
+  --glass-border:    rgba(255, 255, 255, 0.055);
+  --glass-blur:      blur(18px) saturate(140%);
+  --glass-shadow:    0 8px 32px rgba(0, 0, 0, 0.55),
+                     0 2px  8px rgba(0, 0, 0, 0.35),
+                     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Radius */
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm:  6px;
+
+  /* Typography */
+  --text-primary:   rgba(255, 255, 255, 0.90);
+  --text-secondary: rgba(255, 255, 255, 0.38);
+  --text-tertiary:  rgba(255, 255, 255, 0.18);
+
+  /* Stat bar colors */
+  --bar-cpu:  #5eead4;
+  --bar-ram:  #f87171;
+  --bar-temp: #facc15;
+
+  /* Spacing — tighter for compact floating look */
+  --gap: 10px;
+  --pad: 16px;
+}

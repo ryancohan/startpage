@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/modules.css" />
+</head>
+<body>
+
+  <div class="grid">
+
+    <!-- MODULE 1: Clock + Weather -->
+    <div class="card mod-clock" id="mod-clock">
+      <div class="clock-top">
+        <div class="clock-time" id="clock">00:00:00</div>
+        <div class="clock-date" id="clock-date">1 January</div>
+        <div class="clock-day"  id="clock-day">Monday</div>
+      </div>
+      <div class="weather-row">
+        <span class="weather-icon" id="weather-icon">—</span>
+        <span class="weather-temp" id="weather-temp">—°C</span>
+        <span class="weather-desc" id="weather-desc"></span>
+      </div>
+    </div>
+
+    <!-- MODULE 2: Search -->
+    <div class="card mod-search" id="mod-search">
+      <div class="search-wrap">
+        <div class="engine-picker" id="enginePicker">
+          <button class="engine-btn" id="engineBtn">
+            <img id="engineIcon" src="" alt="" />
+            <span id="engineLabel">Google</span>
+            <svg class="chevron" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="engine-menu" id="engineMenu"></div>
+        </div>
+        <input
+          class="search-input"
+          id="searchInput"
+          type="text"
+          placeholder="Search..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <svg class="search-icon" viewBox="0 0 16 16" fill="none">
+          <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- MODULE 3: Links -->
+    <div class="card mod-links" id="mod-links">
+      <div class="links-grid" id="linksGrid"></div>
+    </div>
+
+    <!-- MODULE 4: Tasks -->
+    <div class="card mod-tasks" id="mod-tasks">
+      <div class="module-header">
+        <span class="module-title">Tasks</span>
+        <button class="icon-btn" id="addTaskBtn" title="Add task">
+          <svg viewBox="0 0 14 14" fill="none">
+            <line x1="7" y1="1" x2="7" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="1" y1="7" x2="13" y2="7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="task-list" id="taskList"></ul>
+      <input class="task-input" id="taskInput" type="text" placeholder="New task…" autocomplete="off" />
+    </div>
+
+    <!-- MODULE 5: Notes -->
+    <div class="card mod-notes" id="mod-notes">
+      <div class="module-header">
+        <span class="module-title">Notes</span>
+      </div>
+      <textarea class="notes-area" id="notesArea" placeholder="Quick note…" spellcheck="false"></textarea>
+    </div>
+
+    <!-- MODULE 6: System Stats -->
+    <div class="card mod-stats" id="mod-stats">
+      <div class="module-header">
+        <span class="module-title">System</span>
+      </div>
+      <div class="stats-body">
+        <div class="stat-row">
+          <div class="stat-label">CPU <span class="stat-val" id="cpu-val">—</span></div>
+          <div class="stat-bar"><div class="stat-fill fill-cpu" id="cpu-bar"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">RAM <span class="stat-val" id="ram-val">—</span></div>
+          <div class="stat-bar"><div class="stat-fill fill-ram" id="ram-bar"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">Temp <span class="stat-val" id="temp-val">—</span></div>
+          <div class="stat-bar"><div class="stat-fill fill-temp" id="temp-bar"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 7: Media -->
+    <div class="card mod-media" id="mod-media">
+      <div class="media-art" id="mediaArt">♪</div>
+      <div class="media-info">
+        <div class="media-title"  id="mediaTitle">Nothing playing</div>
+        <div class="media-artist" id="mediaArtist">—</div>
+      </div>
+      <div class="media-controls">
+        <button class="ctrl-btn" id="prevBtn" title="Previous">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M4 4h2v12H4V4zm10.5 6L7 4v12l7.5-6z"/>
+          </svg>
+        </button>
+        <button class="ctrl-btn play" id="playBtn" title="Play / Pause">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+        <button class="ctrl-btn" id="nextBtn" title="Next">
+          <svg viewBox="0 0 20 20" fill="currentColor">
+            <path d="M14 4h2v12h-2V4zM5.5 10L13 4v12L5.5 10z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /.grid -->
+
+  <!-- Scripts (order matters) -->
+  <script src="js/config.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/links.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/notes.js"></script>
+  <script src="js/stats.js"></script>
+  <script src="js/media.js"></script>
+</body>
+</html>
